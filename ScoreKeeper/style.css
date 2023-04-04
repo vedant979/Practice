@@ -1,0 +1,39 @@
+
+.heading{
+    text-align: center;
+    padding-right: 167px;
+    font-family: sans-serif;
+    margin: auto;
+}
+.scores{
+    /* text-align: center;*/
+    padding-right: 270px; 
+    font-family: sans-serif;
+    margin: auto;
+}
+.line{
+    font-size: 15px;
+    /* text-align: center; */
+    padding-right: 90px;
+    font-family: sans-serif;
+    margin: auto;
+}
+.score{
+    text-align: center;
+    border: 20px black !important; 
+}
+.btns{
+    margin: 10px;
+    text-align: center;
+    padding-right: 90px;
+
+}
+.dropDown{
+    margin: 10px;
+    text-align: center;
+    /* padding-right: 90px; */
+}
+.para{
+    margin: auto;
+    padding-right: 248px;
+}

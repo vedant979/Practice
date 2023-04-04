@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="columns ">
+            <div class="column is-half is-offset-one-quarter">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class= "image is-2by1">
+                            <img src="scoreKeeper/pingPong.jpg" alt="image">
+                        </figure>
+                    </div>
+                    <header class="card-header">
+                      <p class="card-header-title">
+                        Ping Pong Score Keeper
+                      </p>
+                    </header>
+                    <div class="card-content">
+                      <div class="content">
+                        <h1 class="title is-1"><span id="score1">0</span> to <span id="score2">0</span></h1>
+                        <br>
+                        <p class="line">Use the buttons below to keep score</p>
+                            <h4 class="para">Playing to:
+                                <div class="select is-rounded is-small">
+                                        <select name="Select Value" id="num">
+                    
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                    </select>
+                                </div>
+                            </h4>
+                            <p id="winner"></p>
+                      </div>
+                    </div>
+                    <footer class="card-footer">
+                        <button id="p1" class="button is-primary card-footer-item">+1 Player One</button>
+                        <button id="p2"class="button is-link card-footer-item">+1 Player Two</button>
+                        <button id="reset"class="button is-danger card-footer-item">Reset</button>
+                    </footer>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var winningScore = 3;
+        var num1 = 0;
+        var num2=0;
+        var winScore = document.getElementById('num');
+        var btn1 = document.getElementById('p1');
+        var btn2 = document.getElementById('p2');
+        var btn3 = document.getElementById('reset');
+        var score1 = document.getElementById('score1');
+        var score2 = document.getElementById('score2');
+        var p = document.getElementById('winner');
+
+        winScore.addEventListener('change', function(){
+            num1=0;
+            num2=0;
+            score1.innerText = 0;
+            score2.innerText  = 0;
+            score2.style.color = "black";
+            score1.style.color = "black";
+            p.innerText="";  
+            winningScore = parseInt(this.value);
+        })
+        
+        btn1.onclick = function(){
+            if(num1!==winningScore){
+            num1++;
+            score1.innerText  = num1;
+            }
+            if(num1===winningScore){
+                var text = document.createTextNode("Player 1 Wins");
+                
+                p.appendChild(text);
+                score1.style.color = "green";
+                score2.style.color = "red";
+            }
+        }
+
+        btn2.onclick = function(){
+            if(num2!==winningScore){
+                num2++;
+                score2.innerText  = num2;
+            }
+            if(num2===winningScore){
+                var text = document.createTextNode("Player 2 Wins");
+                p.appendChild(text);
+                score2.style.color = "green";
+                score1.style.color = "red";
+            }
+        }
+
+        btn3.onclick = function(){
+            num1=0;
+            num2=0;
+            score1.innerText = 0;
+            score2.innerText  = 0;
+            score2.style.color = "black";
+            score1.style.color = "black";
+            p.innerText="";    
+        }
+
+        
+    </script>
+</body>
+</html>
